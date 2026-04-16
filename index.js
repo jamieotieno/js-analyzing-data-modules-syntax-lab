@@ -1,3 +1,5 @@
+require("datejs");
+
 // Function to combine all users
 function combineUsers(...args) {
   
@@ -9,10 +11,14 @@ function combineUsers(...args) {
 
   // loop through args
   for (const arr of args) {
-    
-  };
+    combinedObject.users = [...combinedObject.users, ...arr]; // Merges the arrays
+  }; 
 
-  return args.flat();
+ //  Gets today's date
+  combinedObject.merge_date = new Date().toString("M/d/yyyy");
+
+  return combinedObject;
+
 }
 
 
